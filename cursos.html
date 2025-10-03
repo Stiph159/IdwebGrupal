@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> Navega por nuestros sitios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">registro</a></li>
+                <li><a href="lenguajes.html">lenguajes</a></li>
+                <li><a href="validacion.html">validacion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>formulario de inscripcion del curso</h2>
+    <form action="#" method="post">
+        <label  for="nombre">ingrese su nombre</label>
+        <input  type="text" 
+                id="nombre"    
+                name="nombre" 
+                placeholder="ingrese su nombre" 
+                required>
+        <br><br>
+
+        <label  for="apellido">ingrese su apellido</label>
+        <input  type="text" 
+                id="apellido"    
+                name="apellido" 
+                placeholder="ingrese su apellido" 
+                required>
+        <br><br>
+        
+        <label  for="dni">ingrese su dni</label>
+        <input  type="text" 
+                id="dni" 
+                name="dni" 
+                placeholder="ingrese su dni"  
+                pattern="[0-9]{8}"
+                required>
+        <br><br>
+
+        <label  for="correo">ingrese su correo</label>
+        <input  type="email"
+                id="correo"
+                name="correo"
+                placeholder="ejemplo@ejemplo.com"
+                required>
+        <br><br>
+        
+        <label  for="curso">Selecciona un curso</label><br>
+        <label><input type="checkbox" name="curso" value="DSOO"> DSOO</label><br>
+        <label><input type="checkbox" name="curso" value="WEB"> WEB</label><br>
+        <label><input type="checkbox" name="curso" value="Calculo"> Calculo</label><br>
+
+        <label  for="modalidad">Seleccione virtual o presencial</label><br>
+        <label><input type="radio" name="modalidad" value="presencial"> presencial</label><br>
+        <label><input type="radio" name="modalidad" value="virtual"> virtual</label><br>
+
+        <label  for="horario">horario disponible</label><br>
+        <label><input type="checkbox" name="horario" value="mañana"> mañana</label><br>
+        <label><input type="checkbox" name="horario" value="tarde"> tard</label><br>
+        <label><input type="checkbox" name="horario" value="noche"> noche</label><br>
+
+        <label for="mensaje">agrega tu comentadio adicional</label><br>
+        <textarea id="mensaje" name="mensaje" placeholder="escribe tu comentadio" ></textarea>
+        <br><br>
+
+        <button type="submit">enviar</button>
+        <button type="reset">reestablecer</button>
+
+        <h1> Navega por nuestros sitios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">registro</a></li>
+                <li><a href="lenguajes.html">lenguajes</a></li>
+                <li><a href="validacion.html">validacion</a></li>
+            </ul>
+        </nav>
+
+    </form>
+</body>
+</html>
