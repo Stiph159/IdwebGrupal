@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft</title>
+  <title>Minecraft - GamerStore</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Encabezado -->
   <header>
     <h1>Minecraft</h1>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="dota.html">Dota 2</a></li>
-        <li><a href="minecraft.html">minecraft</a></li>
+        <li><a href="minecraft.html" class="active">Minecraft</a></li>
         <li><a href="pou.html">Pou</a></li>
-        <li> <a href="left.html">left 4 dead</a></li>
+        <li><a href="left.html">Left 4 Dead</a></li>
+        <li><a href="fortnite.html">Fortnite</a></li>
+        <li><a href="gta5.html">GTA V</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Imagen principal -->
   <section class="banner">
-    <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/5AEC/production/_95567232_index-hero-og.0757cc783ca4-1.jpg" alt="Banner de Minecraft" width="100%">
+    <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/5AEC/production/_95567232_index-hero-og.0757cc783ca4-1.jpg" alt="Banner de Minecraft">
   </section>
 
-  <!-- Descripción -->
   <section class="descripcion">
     <h2>¿Qué es Minecraft?</h2>
     <p>
@@ -38,7 +37,6 @@
     </p>
   </section>
 
-  <!-- Características -->
   <section class="caracteristicas">
     <h2>Características principales</h2>
     <ul>
@@ -49,48 +47,51 @@
     </ul>
   </section>
 
-  <!-- sección de capturas -->
   <section class="galeria">
     <h2>Capturas del juego</h2>
     <div class="imagenes">
-      <img src="https://i.ytimg.com/vi/K8sPIioq-e4/maxresdefault.jpg" alt="Imagen de partida 1" width="400">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaUIHrEn6Hanb-89VdhFc9fIJOSP0sltXAFw&s" alt="Imagen de partida 2" width="400">
-      <img src="https://i.ytimg.com/vi/d8L_TGWV7uY/maxresdefault.jpg" alt="Imagen de partida 3" width="400">
+      <img src="https://i.ytimg.com/vi/K8sPIioq-e4/maxresdefault.jpg" alt="Imagen de partida 1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaUIHrEn6Hanb-89VdhFc9fIJOSP0sltXAFw&s" alt="Imagen de partida 2">
+      <img src="https://i.ytimg.com/vi/d8L_TGWV7uY/maxresdefault.jpg" alt="Imagen de partida 3">
     </div>
   </section>
 
-  <!-- Requisitos del sistema -->
   <section class="requisitos">
     <h2>Requisitos del sistema (PC)</h2>
-    <table border="1" cellpadding="8">
+    <table>
       <tr>
         <th>Requisito</th>
         <th>Mínimo</th>
+        <th>Recomendado</th>
       </tr>
       <tr>
         <td>Sistema operativo</td>
         <td>Windows 10 o superior</td>
+        <td>Windows 11 64-bit</td>
       </tr>
       <tr>
         <td>Procesador</td>
         <td>Intel Core i3 o AMD Ryzen 3</td>
+        <td>Intel Core i5 o AMD Ryzen 5</td>
       </tr>
       <tr>
         <td>Memoria RAM</td>
         <td>8 GB</td>
+        <td>16 GB</td>
       </tr>
       <tr>
         <td>Gráficos</td>
-        <td>NVIDIA GeForce 700 Series o AMD Radeon Rx 200 Series</td>
+        <td>NVIDIA GeForce 700 Series</td>
+        <td>NVIDIA GTX 1060 o AMD RX 580</td>
       </tr>
       <tr>
         <td>Almacenamiento</td>
         <td>2 GB de espacio libre</td>
+        <td>4 GB SSD</td>
       </tr>
     </table>
   </section>
 
-  <!-- Enlaces relacionados -->
   <section class="enlaces">
     <h2>Enlaces relacionados</h2>
     <ul>
@@ -99,33 +100,25 @@
       <li><a href="https://www.youtube.com/@Minecraft" target="_blank">Canal oficial de YouTube</a></li>
     </ul>
   </section>
-   </section>
-   <form>
-    <section class="comentario">
-    <h2>Comentario</h2>
-      <label for="nombre">Nombre:</label>
-      <input 
-        type="text" 
-        id="comentario" 
-        name="nombre" 
-        placeholder="Escribe tu nombre..." 
-        required>
-      <label for="comentario">Comentario:</label>
-      <textarea 
-        id="comentario" 
-        name="comentario" 
-        rows="5" 
-        placeholder="Aquí puedes escribir tu comentario " 
-        required></textarea>
 
-      <button type="submit" >Enviar </button>
+  <section class="comentario">
+    <h2>Deja tu comentario</h2>
+    <form id="formComentarioMinecraft">
+      <label for="nombreMinecraft" class="field-required">Nombre:</label>
+      <input type="text" id="nombreMinecraft" name="nombre" placeholder="Escribe tu nombre..." required>
+      
+      <label for="comentarioMinecraft" class="field-required">Comentario:</label>
+      <textarea id="comentarioMinecraft" name="comentario" rows="5" placeholder="Aquí puedes escribir tu comentario..." required></textarea>
+
+      <button type="submit" class="btn btn-primary">Enviar comentario</button>
     </form>
-</section>
+    <div id="comentariosMinecraft"></div>
+  </section>
 
-  <!-- Pie de página -->
   <footer>
     <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

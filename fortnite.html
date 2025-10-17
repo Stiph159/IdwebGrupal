@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortnite - GamerStore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Fortnite</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="dota.html">Dota 2</a></li>
+        <li><a href="minecraft.html">Minecraft</a></li>
+        <li><a href="pou.html">Pou</a></li>
+        <li><a href="left.html">Left 4 Dead</a></li>
+        <li><a href="fortnite.html" class="active">Fortnite</a></li>
+        <li><a href="gta5.html">GTA V</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="https://dropinblog.net/34253310/files/featured/imagem-2024-09-26-103919931.png" alt="Banner de Fortnite">
+  </section>
+
+  <section class="descripcion">
+    <h2>¿Qué es Fortnite?</h2>
+    <p>
+      <strong>Fortnite</strong> es un videojuego desarrollado por Epic Games que combina elementos de construcción con disparos en tercera persona. 
+      Su modo más popular, Battle Royale, enfrenta a 100 jugadores en una isla donde el último en pie gana. 
+      Con constantes actualizaciones y eventos en vivo, Fortnite se ha convertido en un fenómeno cultural.
+    </p>
+  </section>
+
+  <section class="caracteristicas">
+    <h2>Características principales</h2>
+    <ul>
+      <li>Modo Battle Royale gratuito con hasta 100 jugadores</li>
+      <li>Sistema único de construcción y edición en tiempo real</li>
+      <li>Eventos en vivo con artistas famosos y colaboraciones</li>
+      <li>Actualizaciones constantes con nuevo contenido cada temporada</li>
+      <li>Modo Creativo para construir tus propias islas y juegos</li>
+    </ul>
+  </section>
+
+  <section class="galeria">
+    <h2>Capturas del juego</h2>
+    <div class="imagenes">
+      <img src="https://dropinblog.net/34253310/files/featured/imagem-2024-09-26-103919931.png" alt="Fortnite gameplay 1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgBfCKGx8x0eHOEjbgO-GStyV7lK1sRWe4WA&s" alt="Fortnite gameplay 2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoGU7O2az2Pes5jVSg-lDnQoKOecZla_VJsA&s" alt="Fortnite gameplay 3">
+    </div>
+  </section>
+
+  <section class="requisitos">
+    <h2>Requisitos del sistema (PC)</h2>
+    <table>
+      <tr>
+        <th>Requisito</th>
+        <th>Mínimo</th>
+        <th>Recomendado</th>
+      </tr>
+      <tr>
+        <td>Sistema operativo</td>
+        <td>Windows 10/11 64-bit</td>
+        <td>Windows 10/11 64-bit</td>
+      </tr>
+      <tr>
+        <td>Procesador</td>
+        <td>Intel Core i3-3225</td>
+        <td>Intel Core i5-7300U</td>
+      </tr>
+      <tr>
+        <td>Memoria RAM</td>
+        <td>8 GB</td>
+        <td>16 GB</td>
+      </tr>
+      <tr>
+        <td>Gráficos</td>
+        <td>Intel HD 4000</td>
+        <td>NVIDIA GTX 960 o AMD R9 280</td>
+      </tr>
+      <tr>
+        <td>Almacenamiento</td>
+        <td>30 GB SSD</td>
+        <td>30 GB SSD</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="enlaces">
+    <h2>Enlaces relacionados</h2>
+    <ul>
+      <li><a href="https://www.fortnite.com/" target="_blank">Sitio oficial de Fortnite</a></li>
+      <li><a href="https://store.epicgames.com/es-ES/p/fortnite" target="_blank">Descargar en Epic Games</a></li>
+      <li><a href="https://www.youtube.com/fortnite" target="_blank">Canal oficial de YouTube</a></li>
+    </ul>
+  </section>
+
+  <section class="comentario">
+    <h2>Deja tu comentario</h2>
+    <form id="formComentarioFortnite">
+      <label for="nombreFortnite">Nombre:</label>
+      <input type="text" id="nombreFortnite" name="nombre" placeholder="Escribe tu nombre..." required>
+      
+      <label for="comentarioFortnite">Comentario:</label>
+      <textarea id="comentarioFortnite" name="comentario" rows="5" placeholder="Aquí puedes escribir tu comentario..." required></textarea>
+
+      <button type="submit">Enviar comentario</button>
+    </form>
+    <div id="comentariosFortnite"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
