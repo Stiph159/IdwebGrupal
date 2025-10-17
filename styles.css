@@ -116,7 +116,7 @@ footer {
 
 /* ======= FORMULARIO ======= */
 form {
-  max-width: 400px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -179,13 +179,14 @@ button:hover {
   background-color: #2a475e;
   border: 1px solid #3b4b5a;
   border-radius: 6px;
-  padding: 8px 12px;
-  margin: 10px auto; /* centrado */
+  padding: 20px;
+  margin: 20px auto;
   color: #e6e6e6;
-  width: 90%; /* ocupa ancho normal en pantallas grandes o pequeñas */
-  max-width: 600px; /* límite para que no crezca mucho */
+  width: 95%;
+  max-width: 1000px;
   box-sizing: border-box;
 }
+
 
 .comentario p {
   margin: 5px 0 0;
