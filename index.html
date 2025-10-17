@@ -1,53 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de inicio</title>
+    <title>GamerStore - Inicio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Encabezado -->
-  <header>
-    <h1>Inicio</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="dota.html">Dota 2</a></li>
-        <li><a href="minecraft.html">Minecraft</a></li>
-        <li><a href="pou.html">Pou</a></li>
-        <li> <a href="left.html">left 4 dead</a></li>
-        <li><a href="fortnite.html">Fortnite</a></li>
-        <li><a href="gta5.html">GTA V</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-<div class="contenedor-principal"> 
-         <div class="collage-2x2">
-             <a href="minecraft.html" target="_blank" class="celda-imagen">
-                <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/06/Minecraft-1.jpg" alt="juego1">
-            </a>
-            
-            <a href="dota.html" target="_blank" class="celda-imagen">
-                <img src="https://cdn.steamstatic.com/apps/dota2/images/dota2_social.jpg" alt="juego2">
-            </a>
-            
-            <a href="pou.html" target="_blank" class="celda-imagen">
-                <img src="https://static.wikitide.net/pouwiki/thumb/2/2c/Baby_Pou.png/300px-Baby_Pou.png" alt="juego3">
-            </a>
-            
-            <a href="left.html" target="_blank" class="celda-imagen">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Left4Dead_Windows_cover.jpg/250px-Left4Dead_Windows_cover.jpg" alt="juego5">
-            </a>
-            <a href="fortnite.html" class="celda-imagen">
-            <img src="https://cdn2.unrealengine.com/fortnite-key-art-1920x1080-4ad2be42dae7.jpg" alt="Fortnite">
-            </a>
-            <a href="gta5.html" class="celda-imagen">
-            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2813/c8abk2b2afoFuIIg8FwK4BI4.png" alt="GTA V">
-            </a>
-        </div>
-    </div>
-  
+    <header>
+        <h1>GamerStore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="dota.html">Dota 2</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="pou.html">Pou</a></li>
+                <li><a href="left.html">Left 4 Dead</a></li>
+                <li><a href="fortnite.html">Fortnite</a></li>
+                <li><a href="gta5.html">GTA V</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="descripcion">
+            <h2>Bienvenido a GamerStore</h2>
+            <p>Tu destino definitivo para información sobre los mejores videojuegos. Explora, descubre y comparte tu pasión por el gaming.</p>
+        </section>
+
+        <section class="galeria">
+            <h2>Nuestros Juegos</h2>
+            <div class="collage-2x2">
+                <a href="minecraft.html" class="celda-imagen">
+                    <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/06/Minecraft-1.jpg" alt="Minecraft">
+                    <div class="overlay">Minecraft</div>
+                </a>
+                
+                <a href="dota.html" class="celda-imagen">
+                    <img src="https://cdn.steamstatic.com/apps/dota2/images/dota2_social.jpg" alt="Dota 2">
+                    <div class="overlay">Dota 2</div>
+                </a>
+                
+                <a href="pou.html" class="celda-imagen">
+                    <img src="https://static.wikitide.net/pouwiki/thumb/2/2c/Baby_Pou.png/300px-Baby_Pou.png" alt="Pou">
+                    <div class="overlay">Pou</div>
+                </a>
+                
+                <a href="left.html" class="celda-imagen">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Left4Dead_Windows_cover.jpg/250px-Left4Dead_Windows_cover.jpg" alt="Left 4 Dead">
+                    <div class="overlay">Left 4 Dead</div>
+                </a>
+
+                <a href="fortnite.html" class="celda-imagen">
+                    <img src="https://cdn2.unrealengine.com/fortnite-key-art-1920x1080-4ad2be42dae7.jpg" alt="Fortnite">
+                    <div class="overlay">Fortnite</div>
+                </a>
+                
+                <a href="gta5.html" class="celda-imagen">
+                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2813/c8abk2b2afoFuIIg8FwK4BI4.png" alt="GTA V">
+                    <div class="overlay">GTA V</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
