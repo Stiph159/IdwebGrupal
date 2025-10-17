@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA V - GamerStore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Grand Theft Auto V</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="dota.html">Dota 2</a></li>
+        <li><a href="minecraft.html">Minecraft</a></li>
+        <li><a href="pou.html">Pou</a></li>
+        <li><a href="left.html">Left 4 Dead</a></li>
+        <li><a href="fortnite.html">Fortnite</a></li>
+        <li><a href="gta5.html" class="active">GTA V</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2812/4YtSVmjCbgIWUgJC0e6HxGfV.png" alt="Banner de GTA V">
+  </section>
+
+  <section class="descripcion">
+    <h2>¿Qué es Grand Theft Auto V?</h2>
+    <p>
+      <strong>GTA V</strong> es un videojuego de acción y aventura desarrollado por Rockstar Games. 
+      Situado en la ficticia ciudad de Los Santos y sus alrededores, el juego sigue la historia de tres criminales 
+      mientras realizan atracos y enfrentan presiones gubernamentales. También incluye GTA Online, un modo multijugador 
+      masivo que continúa expandiéndose con nuevo contenido.
+    </p>
+  </section>
+
+  <section class="caracteristicas">
+    <h2>Características principales</h2>
+    <ul>
+      <li>Historia con tres protagonistas intercambiables</li>
+      <li>Mundo abierto gigantesco basado en Los Ángeles</li>
+      <li>GTA Online con modo multijugador persistente</li>
+      <li>Grafícos de última generación y atención al detalle</li>
+      <li>Actividades secundarias y misiones variadas</li>
+    </ul>
+  </section>
+
+  <section class="galeria">
+    <h2>Capturas del juego</h2>
+    <div class="imagenes">
+      <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/75k927a4272a5o8/dec5b62d5b3225c2e49fc12d97a42d5d8a34e6a7.jpg" alt="GTA V gameplay 1">
+      <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/75k927a4272a5o8/7f1353d3b0f5b5b1a42a5d69e5d2a4d2a34e6a7.jpg" alt="GTA V gameplay 2">
+      <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/75k927a4272a5o8/9a5c6653d2e5b5b1a42a5d69e5d2a4d2a34e6a7.jpg" alt="GTA V gameplay 3">
+    </div>
+  </section>
+
+  <section class="requisitos">
+    <h2>Requisitos del sistema (PC)</h2>
+    <table>
+      <tr>
+        <th>Requisito</th>
+        <th>Mínimo</th>
+        <th>Recomendado</th>
+      </tr>
+      <tr>
+        <td>Sistema operativo</td>
+        <td>Windows 10 64-bit</td>
+        <td>Windows 10/11 64-bit</td>
+      </tr>
+      <tr>
+        <td>Procesador</td>
+        <td>Intel Core i5-3470</td>
+        <td>Intel Core i7-8700K</td>
+      </tr>
+      <tr>
+        <td>Memoria RAM</td>
+        <td>8 GB</td>
+        <td>16 GB</td>
+      </tr>
+      <tr>
+        <td>Gráficos</td>
+        <td>NVIDIA GTX 660 2GB</td>
+        <td>NVIDIA GTX 1660 Super</td>
+      </tr>
+      <tr>
+        <td>Almacenamiento</td>
+        <td>110 GB HDD</td>
+        <td>110 GB SSD</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="enlaces">
+    <h2>Enlaces relacionados</h2>
+    <ul>
+      <li><a href="https://www.rockstargames.com/V/es" target="_blank">Sitio oficial de GTA V</a></li>
+      <li><a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" target="_blank">Comprar en Steam</a></li>
+      <li><a href="https://www.rockstargames.com/es/games/V" target="_blank">Información oficial</a></li>
+    </ul>
+  </section>
+
+  <section class="comentario">
+    <h2>Deja tu comentario</h2>
+    <form id="formComentarioGTA5">
+      <label for="nombreGTA5">Nombre:</label>
+      <input type="text" id="nombreGTA5" name="nombre" placeholder="Escribe tu nombre..." required>
+      
+      <label for="comentarioGTA5">Comentario:</label>
+      <textarea id="comentarioGTA5" name="comentario" rows="5" placeholder="Aquí puedes escribir tu comentario..." required></textarea>
+
+      <button type="submit">Enviar comentario</button>
+    </form>
+    <div id="comentariosGTA5"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
