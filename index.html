@@ -24,43 +24,46 @@
     </header>
 
     <main>
+        <!-- RECUADRO BIENVENIDO (ahora mismo ancho) -->
         <section class="descripcion">
-            <h2>Bienvenido a GamerStore</h2>
-            <p>Tu destino definitivo para información sobre los mejores videojuegos. Explora, descubre y comparte tu pasión por el gaming.</p>
+            <h2>¡Bienvenido a GamerStore!</h2>
+            <p>Tu destino definitivo para información sobre los mejores videojuegos. 
+               Explora, descubre y comparte tu pasión por el gaming.</p>
         </section>
 
-        <section class="galeria">
-            <h2>Nuestros Juegos</h2>
-            <div class="collage-2x2">
-                <a href="minecraft.html" class="celda-imagen">
-                    <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/06/Minecraft-1.jpg" alt="Minecraft">
-                    <div class="overlay">Minecraft</div>
-                </a>
-                
-                <a href="dota.html" class="celda-imagen">
-                    <img src="https://cdn.steamstatic.com/apps/dota2/images/dota2_social.jpg" alt="Dota 2">
-                    <div class="overlay">Dota 2</div>
-                </a>
-                
-                <a href="pou.html" class="celda-imagen">
-                    <img src="https://static.wikitide.net/pouwiki/thumb/2/2c/Baby_Pou.png/300px-Baby_Pou.png" alt="Pou">
-                    <div class="overlay">Pou</div>
-                </a>
-                
-                <a href="left.html" class="celda-imagen">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Left4Dead_Windows_cover.jpg/250px-Left4Dead_Windows_cover.jpg" alt="Left 4 Dead">
-                    <div class="overlay">Left 4 Dead</div>
-                </a>
-
-                <a href="fortnite.html" class="celda-imagen">
-                    <img src="https://cdn2.unrealengine.com/fortnite-key-art-1920x1080-4ad2be42dae7.jpg" alt="Fortnite">
-                    <div class="overlay">Fortnite</div>
-                </a>
-                
-                <a href="gta5.html" class="celda-imagen">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2813/c8abk2b2afoFuIIg8FwK4BI4.png" alt="GTA V">
-                    <div class="overlay">GTA V</div>
-                </a>
+        <!-- CARRUSEL (mismo ancho automático) -->
+        <section class="carousel-section">
+            <h2>🔥 Juegos Destacados 🔥</h2>
+            <div class="carousel-container">
+                <button class="arrow prev-arrow">❮</button>
+                <div class="game-list">
+                    <!-- TUS 6 JUEGOS AQUÍ (sin cambios) -->
+                    <div class="game-item"><a href="minecraft.html">
+                        <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/06/Minecraft-1.jpg" alt="Minecraft">
+                        <div class="info"><h3>Minecraft</h3><p>Sandbox • Creatividad</p></div>
+                    </a></div>
+                    <div class="game-item"><a href="dota.html">
+                        <img src="https://cdn.steamstatic.com/apps/dota2/images/dota2_social.jpg" alt="Dota 2">
+                        <div class="info"><h3>Dota 2</h3><p>MOBA • Estrategia</p></div>
+                    </a></div>
+                    <div class="game-item"><a href="gta5.html">
+                        <img src="https://i.blogs.es/6a071d/gtav/1366_2000.jpg" alt="GTA V">
+                        <div class="info"><h3>GTA V</h3><p>Mundo Abierto • Acción</p></div>
+                    </a></div>
+                    <div class="game-item"><a href="fortnite.html">
+                        <img src="https://dropinblog.net/34253310/files/featured/imagem-2024-09-26-103919931.png" alt="Fortnite">
+                        <div class="info"><h3>Fortnite</h3><p>Battle Royale</p></div>
+                    </a></div>
+                    <div class="game-item"><a href="left.html">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/500/capsule_616x353.jpg?t=1745368560" alt="Left 4 Dead">
+                        <div class="info"><h3>Left 4 Dead</h3><p>Zombies • Coop</p></div>
+                    </a></div>
+                    <div class="game-item"><a href="pou.html">
+                        <img src="https://www.coolmathgames.com/sites/default/files/styles/mobile_game_image/public/Pou_OG-logo.jpg.webp?itok=GsE4LZs0" alt="Pou">
+                        <div class="info"><h3>Pou</h3><p>Mascota Virtual</p></div>
+                    </a></div>
+                </div>
+                <button class="arrow next-arrow">❯</button>
             </div>
         </section>
     </main>

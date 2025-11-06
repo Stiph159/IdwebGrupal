@@ -200,5 +200,20 @@ function inicializarContadorVisitas() {
     console.log(`¡Bienvenido! Visitas totales: ${nuevasVisitas}`);
 }
 
-// Inicializar contador al cargar
+// Inicializar contador al cargar ruleta de imagenes
 inicializarContadorVisitas();
+const lista = document.querySelector('.game-list');
+const items = document.querySelectorAll('.game-item');
+let pos = 0;
+
+// DERECHA
+document.querySelector('.next-arrow').onclick = () => {
+  pos = (pos + 1) % items.length;
+  lista.style.transform = `translateX(-${pos * 300}px)`;
+};
+
+// IZQUIERDA
+document.querySelector('.prev-arrow').onclick = () => {
+  pos = (pos - 1 + items.length) % items.length;
+  lista.style.transform = `translateX(-${pos * 300}px)`;
+};
