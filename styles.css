@@ -188,9 +188,9 @@ button:hover {
 
 /* ======= COMENTARIOS ======= */
 .comentario {
-  width: 71%;                     /* ¡¡MISMO ANCHO QUE .descripcion!! */
+  width: 71%;                     
   max-width: 1200px;
-  margin: 3rem auto;              /* ¡¡CENTRADO PERFECTO!! */
+  margin: 3rem auto;              
   padding: 2rem 2.5rem;
   background: #2a475e;
   border-radius: 5px;
@@ -226,7 +226,6 @@ body::before {
 }
 
 /* ======= ESTILOS PARA JAVASCRIPT ======= */
-
 /* Estilos para comentarios dinámicos */
 .comentario-item {
   background: #1b2838;
