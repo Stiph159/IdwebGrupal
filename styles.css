@@ -646,3 +646,101 @@ textarea:focus-visible {
 .prev-arrow { left: 10px; }
 .next-arrow { right: 10px; }
 
+/* --- NUEVOS ESTILOS PARA LISTADO DE JUEGOS --- */
+
+.juegos-populares {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px; /* Un poco más ancha que la sección normal */
+  text-align: center;
+}
+
+.cuadricula-juegos {
+  display: grid;
+  /* 3 columnas en pantallas grandes, con un espacio de 20px */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tarjeta-juego {
+  background-color: #1b2838; /* Color de fondo oscuro */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* Quitar el subrayado del enlace */
+  color: #c7d5e0; /* Color de texto base */
+  position: relative; /* Para posicionar el ranking */
+}
+
+.tarjeta-juego:hover {
+  transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+  box-shadow: 0 8px 25px rgba(102, 192, 244, 0.3); /* Sombra con color Steam */
+}
+
+.tarjeta-juego img {
+  width: 100%;
+  height: 180px; /* Altura fija para las imágenes */
+  object-fit: cover;
+  border-bottom: 2px solid #66c0f4;
+}
+
+.info-juego {
+  padding: 15px;
+  text-align: left;
+  flex-grow: 1; /* Para que la información ocupe el espacio restante */
+}
+
+.info-juego h3 {
+  color: #66c0f4; /* Título en azul Steam */
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.4em;
+}
+
+.etiquetas {
+  font-size: 0.9em;
+  color: #8f98a0;
+  margin-bottom: 10px;
+}
+
+.jugadores {
+  font-weight: bold;
+  color: #2ecc71; /* Color verde para simular "en línea" */
+  font-size: 0.95em;
+}
+
+/* Estilo para el ranking */
+.ranking {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e74c3c; /* Rojo de destaque */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive para la cuadrícula */
+@media (max-width: 650px) {
+  .cuadricula-juegos {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+}
+
+/* Asegúrate de que tu header tenga el nuevo enlace */
+nav a[href="mas_jugados.html"] {
+  color: #c7d5e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a[href="mas_jugados.html"]:hover {
+  color: #66c0f4;
+}

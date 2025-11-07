@@ -217,3 +217,14 @@ document.querySelector('.prev-arrow').onclick = () => {
   pos = (pos - 1 + items.length) % items.length;
   lista.style.transform = `translateX(-${pos * 300}px)`;
 };
+// ...
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        // AÑADE 'mas_jugados.html' a esta condición
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'index.html' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+// ...
