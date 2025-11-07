@@ -1,7 +1,7 @@
 // script.js - Funcionalidades para GamerStore
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. SISTEMA DE COMENTARIOS
+    // 1. SISTEMA DE COMENTARIOS (TEMPORALES)
     inicializarSistemaComentarios();
     
     // 2. NAVEGACIÓN ACTIVA
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     inicializarFormularioContacto();
 });
 
-// ======= SISTEMA DE COMENTARIOS =======
+// ======= SISTEMA DE COMENTARIOS (TEMPORALES - 5 SEGUNDOS) =======
 function inicializarSistemaComentarios() {
     const formularios = {
         'formComentarioFortnite': 'comentariosFortnite',
@@ -22,19 +22,19 @@ function inicializarSistemaComentarios() {
         'formComentarioDota': 'comentariosDota',
         'formComentarioMinecraft': 'comentariosMinecraft',
         'formComentarioPou': 'comentariosPou',
-        'formComentarioLeft': 'comentariosLeft'
+        'formComentarioLeft': 'comentariosLeft',
+        'formComentarioMasJugados': 'comentariosMasJugados' // Para mas_jugados.html
     };
 
-    // Inicializar cada formulario
     Object.keys(formularios).forEach(formId => {
         const form = document.getElementById(formId);
         const contenedorId = formularios[formId];
         
         if (form) {
-            // Cargar comentarios existentes
+            // Mostrar mensaje inicial
             cargarComentarios(contenedorId);
             
-            // Manejar envío de nuevo comentario
+            // Enviar comentario
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 enviarComentario(form, contenedorId);
@@ -47,68 +47,80 @@ function cargarComentarios(contenedorId) {
     const contenedor = document.getElementById(contenedorId);
     if (!contenedor) return;
     
-    const comentarios = JSON.parse(localStorage.getItem(contenedorId)) || [];
-    
-    if (comentarios.length === 0) {
-        contenedor.innerHTML = '<p class="loading">No hay comentarios aún. ¡Sé el primero en comentar!</p>';
-        return;
-    }
-    
-    contenedor.innerHTML = comentarios.map(comentario => `
-        <div class="comentario-item">
-            <div class="comentario-autor">${escapeHTML(comentario.nombre)}</div>
-            <div class="comentario-texto">${escapeHTML(comentario.texto)}</div>
-            <small>${new Date(comentario.fecha).toLocaleDateString('es-ES')}</small>
-        </div>
-    `).join('');
+    // Siempre vacío al inicio (nada en localStorage)
+    contenedor.innerHTML = '<p class="no-comentarios">No hay comentarios aún. ¡Sé el primero!</p>';
 }
 
 function enviarComentario(form, contenedorId) {
     const nombreInput = form.querySelector('input[type="text"]');
     const comentarioInput = form.querySelector('textarea');
     
-    const nuevoComentario = {
-        nombre: nombreInput.value.trim(),
-        texto: comentarioInput.value.trim(),
-        fecha: new Date().toISOString()
-    };
+    const nombre = nombreInput.value.trim();
+    const texto = comentarioInput.value.trim();
     
-    if (!nuevoComentario.nombre || !nuevoComentario.texto) {
+    if (!nombre || !texto) {
         mostrarMensaje('Por favor, completa todos los campos.', 'error');
         return;
     }
+
+    const contenedor = document.getElementById(contenedorId);
     
-    // Guardar en localStorage
-    const comentarios = JSON.parse(localStorage.getItem(contenedorId)) || [];
-    comentarios.unshift(nuevoComentario); // Agregar al inicio
-    localStorage.setItem(contenedorId, JSON.stringify(comentarios));
-    
-    // Actualizar visualización
-    cargarComentarios(contenedorId);
-    
-    // Limpiar formulario y mostrar mensaje
+    // Crear comentario con clase temporal
+    const comentarioHTML = `
+        <div class="comentario-item comentario-temporal">
+            <div class="comentario-autor">${escapeHTML(nombre)}</div>
+            <div class="comentario-texto">${escapeHTML(texto)}</div>
+            <small>Ahora</small>
+        </div>
+    `;
+
+    // Insertar al inicio
+    contenedor.insertAdjacentHTML('afterbegin', comentarioHTML);
+
+    // Limpiar formulario
     form.reset();
-    mostrarMensaje('¡Comentario enviado correctamente!', 'exito');
+    mostrarMensaje('¡Comentario enviado!', 'exito');
+
+    // ELIMINAR DESPUÉS DE 5 SEGUNDOS CON ANIMACIÓN
+    setTimeout(() => {
+        const comentario = contenedor.querySelector('.comentario-temporal');
+        if (comentario) {
+            comentario.style.transition = 'opacity 0.5s ease, transform 0.3s ease';
+            comentario.style.opacity = '0';
+            comentario.style.transform = 'translateY(-10px)';
+            
+            // Remover del DOM después de la animación
+            setTimeout(() => {
+                if (comentario.parentElement) {
+                    comentario.remove();
+                }
+                // Si no quedan comentarios, mostrar mensaje
+                if (contenedor.children.length === 0) {
+                    contenedor.innerHTML = '<p class="no-comentarios">No hay comentarios aún. ¡Sé el primero!</p>';
+                }
+            }, 500);
+        }
+    }, 10000);
 }
 
 // ======= NAVEGACIÓN ACTIVA =======
 function marcarPaginaActiva() {
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav a');
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || 
-            (currentPage === '' && linkPage === 'index.html') ||
-            (currentPage === 'index.html' && linkPage === 'index.html')) {
+        const isHome = (currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html';
+        const isMatch = linkPage === currentPage;
+        
+        if (isHome || isMatch) {
             link.classList.add('active');
         }
     });
 }
 
-// ======= ANIMACIONES =======
+// ======= ANIMACIONES DE CARGA =======
 function inicializarAnimaciones() {
-    // Animación de fade-in para elementos
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -118,7 +130,6 @@ function inicializarAnimaciones() {
         });
     });
     
-    // Aplicar a secciones
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
@@ -135,7 +146,6 @@ function inicializarFormularioContacto() {
     formContacto.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Validación básica
         const nombre = formContacto.querySelector('#nombre');
         const correo = formContacto.querySelector('#correo');
         const mensaje = formContacto.querySelector('#mensaje');
@@ -146,18 +156,14 @@ function inicializarFormularioContacto() {
             return;
         }
         
-        // Simular envío (en un caso real, aquí iría AJAX)
         mostrarMensaje('¡Mensaje enviado! Te contactaremos pronto.', 'exito');
         formContacto.reset();
-        
-        // Scroll to top para ver el mensaje
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
 // ======= UTILIDADES =======
 function mostrarMensaje(mensaje, tipo) {
-    // Remover mensajes existentes
     const mensajesExistentes = document.querySelectorAll('.mensaje-temporal');
     mensajesExistentes.forEach(msg => msg.remove());
     
@@ -178,7 +184,6 @@ function mostrarMensaje(mensaje, tipo) {
     
     document.body.appendChild(mensajeElement);
     
-    // Auto-remover después de 5 segundos
     setTimeout(() => {
         mensajeElement.remove();
     }, 5000);
@@ -190,41 +195,17 @@ function escapeHTML(text) {
     return div.innerHTML;
 }
 
-// ======= CONTADOR DE VISITAS =======
-function inicializarContadorVisitas() {
-    const contador = localStorage.getItem('visitasGamerStore') || 0;
-    const nuevasVisitas = parseInt(contador) + 1;
-    localStorage.setItem('visitasGamerStore', nuevasVisitas);
-    
-    // Opcional: mostrar en consola para debugging
-    console.log(`¡Bienvenido! Visitas totales: ${nuevasVisitas}`);
-}
-
-// Inicializar contador al cargar ruleta de imagenes
-inicializarContadorVisitas();
+// ======= RULETA DE IMÁGENES =======
 const lista = document.querySelector('.game-list');
 const items = document.querySelectorAll('.game-item');
 let pos = 0;
 
-// DERECHA
-document.querySelector('.next-arrow').onclick = () => {
-  pos = (pos + 1) % items.length;
-  lista.style.transform = `translateX(-${pos * 300}px)`;
-};
+document.querySelector('.next-arrow')?.addEventListener('click', () => {
+    pos = (pos + 1) % items.length;
+    lista.style.transform = `translateX(-${pos * 300}px)`;
+});
 
-// IZQUIERDA
-document.querySelector('.prev-arrow').onclick = () => {
-  pos = (pos - 1 + items.length) % items.length;
-  lista.style.transform = `translateX(-${pos * 300}px)`;
-};
-// ...
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        // AÑADE 'mas_jugados.html' a esta condición
-        if (linkPage === currentPage || 
-            (currentPage === '' && linkPage === 'index.html') ||
-            (currentPage === 'index.html' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
-// ...
+document.querySelector('.prev-arrow')?.addEventListener('click', () => {
+    pos = (pos - 1 + items.length) % items.length;
+    lista.style.transform = `translateX(-${pos * 300}px)`;
+});
