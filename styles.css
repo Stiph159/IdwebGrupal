@@ -1,24 +1,40 @@
-/* ======= agregando estilo al cuerpo ======= */
+/* ======================================= */
+/* 🚀 BASE & ESTRUCTURA (Reseteo y Fondo) */
+/* ======================================= */
 body {
   font-family: Arial, sans-serif;
   color: #e6e6e6;
   margin: 0;
-  padding: 0;
-
-  /* ==== Fondo con imagen suave ==== */
-  background-color: #0f1722; /* mantiene el tono oscuro */
+  background-color: #0f1722;
   background-image: url("https://i.pinimg.com/originals/c8/59/aa/c859aa25f28a90aeace66f7096a03e3f.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   position: relative;
 }
 
+/* Capa oscura para suavizar el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 34, 0.8);
+  z-index: -1;
+}
 
-/* ======= encabezado ======= */
+/* Encabezados */
+h1 { font-size: 2em; }
+h2 { color: #66c0f4; }
+.descripcion h2 { margin-bottom: 1rem; }
+
+/* ======================================= */
+/* 💻 ENCABEZADO Y NAVEGACIÓN */
+/* ======================================= */
 header {
-  background-color: #171a21; /* fondo oscuro*/
+  background-color: #171a21;
   color: white;
   text-align: center;
   padding: 15px 0;
@@ -41,27 +57,21 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: #66c0f4;
 }
 
-/* Indicador de página activa */
 nav a.active {
-  color: #66c0f4;
   font-weight: bold;
   border-bottom: 2px solid #66c0f4;
 }
 
-/* ======= BANNER ======= */
-.banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ======= SECCIONES ======= */
+/* ======================================= */
+/* 🧱 SECCIONES Y CONTENEDORES (Alineación a 900px) */
+/* ======================================= */
 section {
-  background-color: #2a475e; /* Azul medio tipo Steam */
+  background-color: #2a475e;
   padding: 20px;
   margin: 20px auto;
   max-width: 900px;
@@ -71,544 +81,37 @@ section {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section h2 {
-  color: #66c0f4;
-}
-
-/* ======= GALERÍA ======= */
-.galeria .imagenes {
-  text-align: center;
-}
-
-.galeria img {
-  width: 90%;
-  max-width: 400px;
-  margin: 10px;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
-}
-
-/* ======= TABLA ======= */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #1b2838;
-  color: #e6e6e6;
-}
-
-th, td {
-  border: 1px solid #3b4b5a;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #171a21;
-  color: #66c0f4;
-}
-
-/* ======= enlaces ======= */
-.enlaces a {
-  color: #66c0f4;
-  text-decoration: none;
-}
-
-.enlaces a:hover {
-  text-decoration: underline;
-}
-
-/* ======= pie pagina ======= */
-footer {
-  background-color: #171a21;
-  color: #c7d5e0;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.9em;
-}
-
-/* ======= FORMULARIO ======= */
-form {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: #c7d5e0;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  background-color: #1b2838;
-  color: #ffffff;
-  margin-bottom: 10px;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border: 1px solid #66c0f4;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #a0a9b2;
-}
-
-input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-button {
-  background-color: #66c0f4;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
-  cursor: pointer;
-  margin-right: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #4fa3d1;
-  transform: translateY(-2px);
-}
-
-/* ======= COMENTARIOS ======= */
-.comentario {
-  width: 71%;                     
-  max-width: 1200px;
-  margin: 3rem auto;              
-  padding: 2rem 2.5rem;
-  background: #2a475e;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  color: #c7d5e0;
-  text-align: left;
-}
-
-.comentario h2 {
-  color: #66c0f4;
-  margin-bottom: 1rem;
- 
-}
-
-/* ======= Imagen inicio ======= */
-.titulo-capturas {
-  color: #4adede; 
-  padding-top: 20px;
-  padding-left: 20px;
-  font-size: 1.8em;
-}
-
-/* Capa oscura para suavizar el fondo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 34, 0.8); /* controla la oscuridad */
-  z-index: -1; /* asegura que quede detrás del contenido */
-}
-
-/* ======= ESTILOS PARA JAVASCRIPT ======= */
-/* Estilos para comentarios dinámicos */
-.comentario-item {
-  background: #1b2838;
-  border-left: 4px solid #66c0f4;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 4px;
-  animation: fadeIn 0.5s ease;
-}
-
-.comentario-autor {
-  font-weight: bold;
-  color: #66c0f4;
-  margin-bottom: 5px;
-  font-size: 1.1em;
-}
-
-.comentario-texto {
-  color: #c7d5e0;
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
-.comentario-item small {
-  color: #8f98a0;
-  font-size: 0.85em;
-}
-
-/* Loading animation */
-.loading {
-  text-align: center;
-  color: #66c0f4;
-  padding: 20px;
-  font-style: italic;
-}
-
-/* Mensajes de confirmación */
-.mensaje-exito {
-  background: #2a475e;
-  border: 1px solid #66c0f4;
-  color: #66c0f4;
-  padding: 10px;
-  border-radius: 4px;
-  margin: 10px 0;
-  text-align: center;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Mejoras para formularios específicos */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.form-row .form-group {
-  flex: 1;
-}
-
-.form-hint {
-  font-size: 0.85rem;
-  color: #8f98a0;
-  margin-top: 5px;
-}
-
-.field-required::after {
-  content: " *";
-  color: #e74c3c;
-}
-
-/* Indicador de fortaleza de contraseña */
-.password-strength {
-  height: 5px;
-  margin-top: 5px;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.strength-weak {
-  background-color: #e74c3c;
-  width: 25%;
-}
-
-.strength-medium {
-  background-color: #f39c12;
-  width: 50%;
-}
-
-.strength-strong {
-  background-color: #2ecc71;
-  width: 100%;
-}
-
-/* Botones mejorados */
-.btn-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background-color: #66c0f4;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #4fa3d1;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-}
-
-.btn-success {
-  background-color: #2ecc71;
-  color: white;
-}
-
-.btn-warning {
-  background-color: #f39c12;
-  color: white;
-}
-
-.btn-danger {
-  background-color: #e74c3c;
-  color: white;
-}
-
-/* Mejoras de accesibilidad */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Focus visible para mejor accesibilidad */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #66c0f4;
-  outline-offset: 2px;
-}
-
-/* ======= RESPONSIVE DESIGN ======= */
-
-/* Tablets */
-@media (max-width: 768px) {
-  
-  nav li {
-    display: block;
-    margin: 5px 0;
-  }
-  
-  section {
-    margin: 15px 10px;
-    padding: 15px;
-  }
-  
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .galeria img {
-    width: 100%;
-    max-width: 100%;
-    margin: 5px 0;
-  }
-}
-
-/* Móviles */
-@media (max-width: 480px) {
-  .collage-2x2 {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  .celda-imagen {
-    height: 150px;
-  }
-  
-  header {
-    padding: 10px 0;
-  }
-  
-  h1 {
-    font-size: 1.5em;
-  }
-  
-  h2 {
-    font-size: 1.3em;
-  }
-  
-  .btn-group {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  table {
-    font-size: 0.9em;
-  }
-  
-  th, td {
-    padding: 6px 4px;
-  }
-}
-
-/* Pantallas grandes */
-@media (min-width: 1200px) {
-  .collage-2x2 {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1400px;
-  }
-  
-  section {
-    max-width: 1000px;
-  }
-}
-
-/* Modo de alto contraste para accesibilidad */
-@media (prefers-contrast: high) {
-  body {
-    background-image: none;
-    background-color: #000000;
-  }
-  
-  body::before {
-    display: none;
-  }
-  
-  section {
-    background-color: #1a1a1a;
-    border: 2px solid #66c0f4;
-  }
-  
-  nav a {
-    color: #ffffff;
-  }
-  
-  nav a.active {
-    background-color: #66c0f4;
-    color: #000000;
-  }
-}
-
-/* Reduce motion para usuarios que lo prefieren */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  .celda-imagen:hover {
-    transform: none;
-  }
-  
-  .galeria img:hover {
-    transform: none;
-  }
-  
-  button:hover {
-    transform: none;
-  }
-}
-
-/* Mejoras de impresión */
-@media print {
-  body {
-    background: white !important;
-    color: black !important;
-  }
-  
-  nav, .banner, .comentario, footer {
-    display: none;
-  }
-  
-  section {
-    background: white !important;
-    color: black !important;
-    border: 1px solid #ccc;
-  }
-  
-  a {
-    color: black !important;
-    text-decoration: underline;
-  }
-}
-/* ===== .descripcion  ===== */
-.descripcion {
-  width: 71%;                    
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 2rem 2.5rem;
-  background: #2a475e;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  color: #c7d5e0;
-}
-.descripcion h2 {
-  color: #66c0f4;
-  margin-bottom: 1rem;
-}
-.descripcion p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-/*carrusel de imagenes____*/
+.descripcion,
+.comentario,
 .carousel-section {
-  width: 72%;                 
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #2a475e;
-  border-radius: 5px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
- 
-  text-align: center;
-}
-.carousel-section h2 {
-  color: #66c0f4;
-  font-size: 2.5rem;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
+.carousel-section {
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+}
+.carousel-section h2 { font-size: 2.5rem; }
+
+/* Banner de juego */
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======================================= */
+/* 🖼️ CARRUSEL Y JUEGOS DESTACADOS */
+/* ======================================= */
 .carousel-container {
   position: relative;
   overflow: hidden;
   margin-top: 1.5rem;
-   padding: 0 50px !important;   /* espacio JUSTO para las flechas */
-  overflow: hidden;
+  padding: 0 50px !important;
 }
 .game-list {
   display: flex;
@@ -639,108 +142,296 @@ textarea:focus-visible {
   font-size: 20px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 99;                  /* siempre encima */
+  z-index: 99;
   opacity: 1 !important;
+  transition: all 0.3s ease;
 }
 .arrow:hover { background: white; color: #66c0f4; }
 .prev-arrow { left: 10px; }
 .next-arrow { right: 10px; }
 
-/* --- NUEVOS ESTILOS PARA LISTADO DE JUEGOS --- */
+/* Galería */
+.galeria .imagenes { text-align: center; }
 
-.juegos-populares {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px; /* Un poco más ancha que la sección normal */
+.galeria img {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover { transform: scale(1.05); }
+
+/* ======================================= */
+/* 📊 TABLAS Y ENLACES */
+/* ======================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1b2838;
+  color: #e6e6e6;
+}
+
+th, td {
+  border: 1px solid #3b4b5a;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #171a21;
+  color: #66c0f4;
+}
+
+/* Enlaces */
+.enlaces a, 
+.descripcion a {
+  color: #66c0f4;
+  text-decoration: none;
+}
+
+.enlaces a:hover, 
+.descripcion a:hover {
+  text-decoration: underline;
+}
+
+/* ======================================= */
+/* 📝 FORMULARIOS Y BOTONES */
+/* ======================================= */
+form { max-width: 1000px; margin: 0 auto; }
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #c7d5e0;
+}
+.field-required::after {
+  content: " *";
+  color: #e74c3c;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1b2838;
+  color: #ffffff;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #66c0f4;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #a0a9b2;
+}
+
+/* Botones genéricos */
+button, .btn {
+  background-color: #66c0f4;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover, .btn:hover {
+  background-color: #4fa3d1;
+  transform: translateY(-2px);
+}
+
+/* Variaciones de botones */
+.btn-primary { background-color: #66c0f4; color: white; }
+.btn-primary:hover { background-color: #4fa3d1; }
+.btn-secondary { background-color: #6c757d; }
+.btn-success { background-color: #2ecc71; }
+.btn-warning { background-color: #f39c12; }
+.btn-danger { background-color: #e74c3c; }
+
+/* ======================================= */
+/* 💬 COMENTARIOS DINÁMICOS */
+/* ======================================= */
+.comentario-item {
+  background: #1b2838;
+  border-left: 4px solid #66c0f4;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease;
+}
+
+.comentario-autor {
+  font-weight: bold;
+  color: #66c0f4;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.comentario-item small {
+  color: #8f98a0;
+  font-size: 0.85em;
+}
+
+/* ======================================= */
+/* 👣 PIE DE PÁGINA */
+/* ======================================= */
+footer {
+  background-color: #171a21;
+  color: #c7d5e0;
   text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+}
+
+/* ======================================= */
+/* ✨ ANIMACIONES Y ACCESIBILIDAD */
+/* ======================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Focus visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #66c0f4;
+  outline-offset: 2px;
+}
+
+/* Ocultar para lectores */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .galeria img:hover,
+  button:hover, .btn:hover {
+    transform: none;
+  }
+}
+
+/* ======================================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ======================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  nav li { display: block; margin: 5px 0; }
+
+  section,
+  .descripcion,
+  .comentario,
+  .carousel-section {
+    margin: 15px 10px;
+    padding: 15px;
+  }
+
+  .form-row { flex-direction: column; gap: 0; }
+
+  .galeria img { width: 100%; max-width: 100%; margin: 5px 0; }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.3em; }
+
+  .btn-group { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+
+  table { font-size: 0.9em; }
+  th, td { padding: 6px 4px; }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  body { background-image: none; background-color: #000000; }
+  body::before { display: none; }
+  section { background-color: #1a1a1a; border: 2px solid #66c0f4; }
+  nav a { color: #ffffff; }
+  nav a.active { background-color: #66c0f4; color: #000000; border: none; }
+}
+/* ======================================= */
+/* 🎮 TARJETAS DE "JUEGOS MÁS JUGADOS" */
+/* ======================================= */
+.juegos-populares {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .cuadricula-juegos {
   display: grid;
-  /* 3 columnas en pantallas grandes, con un espacio de 20px */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 30px;
 }
 
 .tarjeta-juego {
-  background-color: #1b2838; /* Color de fondo oscuro */
-  border-radius: 8px;
+  background-color: #153f61;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none; /* Quitar el subrayado del enlace */
-  color: #c7d5e0; /* Color de texto base */
-  position: relative; /* Para posicionar el ranking */
+  text-decoration: none;
+  color: white;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
 }
 
 .tarjeta-juego:hover {
-  transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
-  box-shadow: 0 8px 25px rgba(102, 192, 244, 0.3); /* Sombra con color Steam */
+  transform: translateY(-5px);
 }
 
 .tarjeta-juego img {
   width: 100%;
-  height: 180px; /* Altura fija para las imágenes */
-  object-fit: cover;
-  border-bottom: 2px solid #66c0f4;
+  height: 180px;
+  object-fit: cover; /* ✅ evita que se deformen y salgan del cuadro */
+  display: block;
 }
 
 .info-juego {
   padding: 15px;
-  text-align: left;
-  flex-grow: 1; /* Para que la información ocupe el espacio restante */
 }
 
-.info-juego h3 {
-  color: #66c0f4; /* Título en azul Steam */
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1.4em;
-}
-
-.etiquetas {
-  font-size: 0.9em;
-  color: #8f98a0;
-  margin-bottom: 10px;
-}
-
-.jugadores {
-  font-weight: bold;
-  color: #2ecc71; /* Color verde para simular "en línea" */
-  font-size: 0.95em;
-}
-
-/* Estilo para el ranking */
 .ranking {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #e74c3c; /* Rojo de destaque */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
+  background: #66c0f4;
+  color: #0f1722;
   font-weight: bold;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* Responsive para la cuadrícula */
-@media (max-width: 650px) {
-  .cuadricula-juegos {
-    grid-template-columns: 1fr; /* Una columna en móviles */
-  }
-}
-
-/* Asegúrate de que tu header tenga el nuevo enlace */
-nav a[href="mas_jugados.html"] {
-  color: #c7d5e0;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a[href="mas_jugados.html"]:hover {
-  color: #66c0f4;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
