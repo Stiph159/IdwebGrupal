@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Suerte - GamerStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>GamerStore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="mas_jugados.html">Mas jugados</a></li>
+                <li><a href="dota.html">Dota 2</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="pou.html">Pou</a></li>
+                <li><a href="left.html">Left 4 Dead</a></li>
+                <li><a href="fortnite.html">Fortnite</a></li>
+                <li><a href="gta5.html">GTA V</a></li>
+                <li><a href="ApiSuerte.html" class="active">Prueba suerte</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section class="descripcion">
+        <h2>Prueba un juego nuevo!</h2>
+        <p>Haz clic en el botón para obtener un juego por descubrir</p>
+        
+        <button onclick="juegoAleatorio()" class="btn btn-primary">Juego aleatorio</button>
+        
+        <!-- Agrega esta clase para centrar -->
+        <div id="resultado" class="resultado-centrado"></div>
+    </section>
+    </main>
+
+    <footer>
+        <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
+    </footer>
+
+</body>
+</html>

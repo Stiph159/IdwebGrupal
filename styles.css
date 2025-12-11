@@ -435,3 +435,84 @@ textarea:focus-visible {
   justify-content: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+
+/* ===== Rating estrellas ===== */
+.rating-basico {
+    background-color: #2a475e;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rating-basico h3 {
+    color: #66c0f4;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.estrellas-basicas {
+    margin: 15px 0;
+}
+
+.estrellas-basicas span {
+    font-size: 40px;
+    cursor: pointer;
+    margin: 0 8px;
+    color: #8f98a0;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.estrellas-basicas span:hover {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+#resultado-rating {
+    color: #c7d5e0;
+    font-size: 1.1em;
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(27, 40, 56, 0.7);
+    border-radius: 4px;
+    display: inline-block;
+    min-width: 200px;
+}
+
+/* ===== estilo para api ===== */
+.resultado-centrado {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a475e;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+.resultado-centrado h3 {
+    color: #66c0f4;
+    margin-bottom: 15px;
+}
+
+.resultado-centrado img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px solid #66c0f4;
+}
+
+.resultado-centrado p {
+    color: #c7d5e0;
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.resultado-centrado p strong {
+    color: #66c0f4;
+}

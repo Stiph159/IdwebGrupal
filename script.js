@@ -209,3 +209,56 @@ document.querySelector('.prev-arrow')?.addEventListener('click', () => {
     pos = (pos - 1 + items.length) % items.length;
     lista.style.transform = `translateX(-${pos * 300}px)`;
 });
+
+// Sistema calificacion
+
+function calificar(puntos) {
+    const estrellas = document.querySelectorAll('.estrellas-basicas span');
+    
+    // Pintar estrellas
+    estrellas.forEach((estrella, index) => {
+        if (index < puntos) {
+            estrella.textContent = '★';
+            estrella.style.color = 'gold';
+        } else {
+            estrella.textContent = '☆';
+            estrella.style.color = 'gray';
+        }
+    });
+    
+    // Mostrar resultado
+    document.getElementById('resultado-rating').textContent = 
+        `Calificado con ${puntos} estrella${puntos > 1 ? 's' : ''}`;
+    
+    // Alert de seleccion
+    alert(`¡Gracias! Calificaste con ${puntos} estrella${puntos > 1 ? 's' : ''}`);
+}
+
+// Script para pagina random
+
+    const API_KEY = "54552e32968d44a79ff88f6e58629b21";
+
+async function juegoAleatorio() {
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "Cargando...";
+
+    try {
+        // Obtener una lista de juegos (20 por página)
+        const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}`);
+        const data = await res.json();
+
+        // Elegir un juego aleatorio del array
+        const juegos = data.results;
+        const random = juegos[Math.floor(Math.random() * juegos.length)];
+
+        // Mostrarlo
+        resultado.innerHTML = `
+            <h3>${random.name}</h3>
+            <img src="${random.background_image}" width="250">
+            <p>Rating: ${random.rating}</p>
+            <p>Fecha de lanzamiento: ${random.released}</p>
+        `;
+    } catch (error) {
+        resultado.innerHTML = "Error al cargar juego";
+    }
+}
