@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba Suerte - GamerStore</title>
+    <title>Carrito - GamerStore</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
+
     <header>
-        <h1>GamerStore</h1>
+        <h1>Carrito de Compras</h1>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Inicio</a></li>
@@ -23,25 +23,34 @@
                 <li><a href="ApiSuerte.html">Prueba suerte</a></li>
                 <li><a href="carrito.html" class="active">Carrito</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+      </ul>
         </nav>
     </header>
 
     <main>
-    <section class="descripcion">
-        <h2>Prueba un juego nuevo!</h2>
-        <p>Haz clic en el botón para obtener un juego por descubrir</p>
-        
-        <button onclick="juegoAleatorio()" class="btn btn-primary">Juego aleatorio</button>
-        
-        <!-- Agrega esta clase para centrar -->
-        <div id="resultado" class="resultado-centrado"></div>
-    </section>
+        <section class="descripcion">
+            <h2>Tu Carrito</h2>
+            <p>Aquí verás los juegos que agregaste. ¡Cotiza con nosotros por WhatsApp!</p>
+        </section>
+
+        <section id="carrito-contenido">
+            <div id="carrito-lista"></div>
+            <div id="carrito-vacio" style="text-align: center; color: #c7d5e0;">
+                <p>Tu carrito está vacío. ¡Agrega juegos desde las páginas!</p>
+            </div>
+        </section>
+
+        <section class="total">
+            <h3>Total: <span id="total-precio">S/ 0.00</span></h3>
+            <button id="vaciar-carrito" class="btn btn-danger">Vaciar carrito</button>
+            <a href="https://api.whatsapp.com/send?phone=978179789&text=Hola!%20Quiero%20cotizar%20los%20juegos%20de%20mi%20carrito" target="_blank" class="btn btn-primary">Cotizar por WhatsApp</a>
+        </section>
     </main>
 
     <footer>
         <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

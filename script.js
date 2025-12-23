@@ -262,3 +262,95 @@ async function juegoAleatorio() {
         resultado.innerHTML = "Error al cargar juego";
     }
 }
+// Mostrar/Ocultar íconos de redes sociales
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggleSocial');
+    const icons = document.getElementById('socialIcons');
+
+    if (toggleBtn && icons) {
+        toggleBtn.addEventListener('click', function() {
+            icons.classList.toggle('active');
+            // Cambia el texto del botón + / ×
+            toggleBtn.textContent = icons.classList.contains('active') ? '×' : '+';
+        });
+    }
+});
+
+
+// Carrito simple - Con eliminar individual y vaciar todo
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// Función para actualizar la vista del carrito
+function actualizarCarrito() {
+    const carritoLista = document.getElementById('carrito-lista');
+    const carritoVacio = document.getElementById('carrito-vacio');
+    const totalPrecio = document.getElementById('total-precio');
+
+    if (carritoLista && carritoVacio) {
+        carritoLista.innerHTML = '';
+        let total = 0;
+
+        if (carrito.length === 0) {
+            carritoVacio.style.display = 'block';
+        } else {
+            carritoVacio.style.display = 'none';
+            carrito.forEach((item, index) => {
+                total += parseFloat(item.precio || 0);
+                const div = document.createElement('div');
+                div.className = 'item-carrito';
+                div.innerHTML = `
+                    <img src="${item.imagen}" alt="${item.nombre}">
+                    <div class="info">
+                        <strong>${item.nombre}</strong>
+                        <p class="precio">S/ ${parseFloat(item.precio).toFixed(2)}</p>
+                    </div>
+                    <button class="btn btn-danger quitar-item" data-index="${index}">Quitar</button>
+                `;
+                carritoLista.appendChild(div);
+            });
+        }
+
+        if (totalPrecio) totalPrecio.textContent = `S/ ${total.toFixed(2)}`;
+    }
+}
+
+// Agregar juego desde cualquier página
+document.querySelectorAll('.agregar-carrito').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const nombre = btn.dataset.nombre;
+        const imagen = btn.dataset.imagen;
+        const precio = parseFloat(btn.dataset.precio) || 0;
+
+        carrito.push({ nombre, imagen, precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarCarrito();
+        alert(`${nombre} agregado al carrito!`);
+    });
+});
+
+// Quitar un item individual
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('quitar-item')) {
+        const index = parseInt(e.target.dataset.index);
+        if (!isNaN(index)) {
+            carrito.splice(index, 1); // Elimina ese item
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarCarrito();
+            alert('Juego quitado del carrito');
+        }
+    }
+});
+
+// Vaciar todo el carrito
+const vaciarBtn = document.getElementById('vaciar-carrito');
+if (vaciarBtn) {
+    vaciarBtn.addEventListener('click', () => {
+        carrito = [];
+        localStorage.removeItem('carrito');
+        actualizarCarrito();
+        alert('Carrito vaciado completamente');
+    });
+}
+
+// Cargar carrito al abrir cualquier página (especialmente carrito.html)
+window.addEventListener('load', actualizarCarrito);

@@ -12,16 +12,17 @@
     <h1>Fortnite</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="mas_jugados.html">Mas jugados</a></li>
-        <li><a href="dota.html">Dota 2</a></li>
-        <li><a href="minecraft.html">Minecraft</a></li>
-        <li><a href="pou.html">Pou</a></li>
-        <li><a href="left.html">Left 4 Dead</a></li>
-        <li><a href="fortnite.html" class="active">Fortnite</a></li>
-        <li><a href="gta5.html">GTA V</a></li>
-        <li><a href="ApiSuerte.html">Prueba suerte</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="mas_jugados.html">Mas jugados</a></li>
+                <li><a href="dota.html">Dota 2</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="pou.html">Pou</a></li>
+                <li><a href="left.html">Left 4 Dead</a></li>
+                <li><a href="fortnite.html">Fortnite</a></li>
+                <li><a href="gta5.html">GTA V</a></li>
+                <li><a href="ApiSuerte.html">Prueba suerte</a></li>
+                <li><a href="carrito.html" class="active">Carrito</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -37,6 +38,10 @@
       Su modo más popular, Battle Royale, enfrenta a 100 jugadores en una isla donde el último en pie gana. 
       Con constantes actualizaciones y eventos en vivo, Fortnite se ha convertido en un fenómeno cultural.
     </p>
+    <!-- Botón Agregar al carrito -->
+<button class="btn btn-success agregar-carrito" data-nombre="fornite" data-imagen="https://dropinblog.net/34253310/files/featured/imagem-2024-09-26-103919931.png" data-precio="0.0">
+    Agregar al carrito
+</button>
   </section>
 
     <!-- Para calificar-->
@@ -130,7 +135,29 @@
     </form>
     <div id="comentariosFortnite"></div>
   </section>
+<!-- Barra lateral fija de redes sociales -->
+<div class="social-sidebar">
+    <!-- Botón principal (el +) -->
+    <button class="social-btn plus" id="toggleSocial">+</button>
 
+    <!-- Íconos que se muestran/ocultan -->
+    <div class="social-icons" id="socialIcons">
+       
+        
+        <a href="https://www.facebook.com/tu-pagina" target="_blank" class="social-btn facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://www.tiktok.com/@tu-usuario" target="_blank" class="social-btn tiktok">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX3f0g0LUJasKu8OvW_-1_zZI4vktRophE_g&s" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com/tu-canal" target="_blank" class="social-btn youtube">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+        </a>
+        <a href="https://x.com/tu-usuario" target="_blank" class="social-btn twitter">
+            <img src="https://img.freepik.com/vector-gratis/aplicacion-twitter-nuevo-logotipo-x-sobre-fondo-negro_1017-45425.jpg?semt=ais_hybrid&w=740&q=80" alt="X">
+        </a>
+    </div>
+</div>
   <footer>
     <p>© 2025 GamerStore / toda la información sobre videojuegos</p>
   </footer>

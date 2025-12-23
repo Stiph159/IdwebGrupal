@@ -516,3 +516,145 @@ textarea:focus-visible {
 .resultado-centrado p strong {
     color: #66c0f4;
 }
+/* Barra lateral fija */
+.social-sidebar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.social-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.social-btn:hover {
+    transform: scale(1.15);
+}
+
+.social-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Colores de fondo */
+.whatsapp { background-color: #25D366; }
+.facebook { background-color: #1877F2; }
+.tiktok { background-color: #000; }
+.youtube { background-color: #FF0000; }
+.twitter { background-color: #000; }
+.plus { background-color: #25a2f5; font-size: 32px; color: white; border: none; cursor: pointer; }
+
+/* Íconos escondidos al inicio */
+.social-icons {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Cuando están visibles */
+.social-icons.active {
+    display: flex;
+}
+/* Estilo para carrito (inspirado en Steam) */
+.total {
+    background-color: #1b2838;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 6px;
+    text-align: center;
+    color: #66c0f4;
+}
+
+.total h3 {
+    margin: 0 0 10px;
+}
+
+.total .btn {
+    margin: 10px 5px;
+}
+
+#carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-carrito {
+    background-color: #2a475e;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.item-carrito img {
+    width: 80px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-carrito .info {
+    flex: 1;
+}
+
+.item-carrito .precio {
+    font-weight: bold;
+    color: #66c0f4;
+}
+
+.item-carrito .descuento {
+    color: #ff9900;
+    font-size: 0.9em;
+}
+/* Botón Agregar al carrito - color personalizado */
+.agregar-carrito {
+    background-color: #1667be; /* Azul como tus botones principales */
+    color: white; /* Texto blanco */
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.agregar-carrito:hover {
+    background-color: #307aca; /* Azul más oscuro al hover */
+    transform: translateY(-2px);
+}
+/* Botón Quitar individual en el carrito */
+.quitar-item {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    align-self: center;
+    margin-left: auto;
+}
+
+.quitar-item:hover {
+    background-color: #c0392b;
+}
+
+/* Hacer el item-carrito más flexible */
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
